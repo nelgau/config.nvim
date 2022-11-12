@@ -1,4 +1,5 @@
 local opt = vim.opt
+local g = vim.g
 
 opt.termguicolors = true
 opt.guicursor = ""
@@ -24,4 +25,9 @@ opt.wrap = false
 
 opt.updatetime = 50
 
-vim.g.mapleader = " "
+g.mapleader = " "
+
+opt.backup = false
+opt.swapfile = false
+opt.undofile = true
+opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undo"
