@@ -6,20 +6,95 @@ vim.cmd([[
 ]])
 
 return require('packer').startup(function(use)
-  use('wbthomason/packer.nvim')
+  use("wbthomason/packer.nvim")
 
-  use('nvim-lualine/lualine.nvim')
+  --
+  -- Colorschemes
+  --
 
-  use('neovim/nvim-lspconfig')
+  use({
+    "shaunsingh/nord.nvim",
+    requires = "folke/lsp-colors.nvim",
+    config = function()
+      require("nelgau.color.nord").setup()
+    end,
+  })
 
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use('nvim-treesitter/nvim-treesitter-context')
-  use('nvim-treesitter/playground')
+  use({
+    "gruvbox-community/gruvbox",
+    requires = "folke/lsp-colors.nvim",
+    config = function()
+      require("nelgau.color.gruvbox").setup()
+    end,
+  })
 
-  use('gruvbox-community/gruvbox')
+  --
+  -- Statusline
+  --
 
-  use('gpanders/editorconfig.nvim')
+  use({
+    "nvim-lualine/lualine.nvim",
+    config = function()
+      require("nelgau.config.lualine").setup()
+    end,
+  })
 
-  -- use "preservim/nerdtree"
-  use {'santiagovrancovich/nerdtree', branch = 'hotfix-issue-#1321'}
+  --
+  -- Language Server
+  --
+
+  use({
+    "neovim/nvim-lspconfig",
+    requires = {
+      -- "williamboman/nvim-lsp-installer",
+      "ray-x/lsp_signature.nvim",
+    },
+    config = function()
+      require("nelgau.config.lspconfig").setup()
+    end,
+  })
+
+  --
+  -- Syntax
+  --
+
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    requires = {
+      "nvim-treesitter/nvim-treesitter-context",
+      "nvim-treesitter/playground",
+    },
+    run = ":TSUpdate",
+    config = function()
+      require("nelgau.config.treesitter").setup()
+    end,
+  })
+
+  --
+  -- Navigation and Editing
+  --
+
+  use({
+    -- use "preservim/nerdtree"
+    "santiagovrancovich/nerdtree",
+    branch = "hotfix-issue-#1321",
+    config = function()
+      require("nelgau.config.nerdtree").setup()
+    end,
+  })
+
+  use({
+    "gpanders/editorconfig.nvim",
+  })
+
+  --
+  -- Input
+  --
+
+  use({
+    "b0o/mapx.nvim",
+    config = function()
+      require("nelgau.config.mappings").setup()
+    end,
+  })
 end)
