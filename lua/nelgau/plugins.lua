@@ -115,6 +115,17 @@ return require('packer').startup({
     })
 
     --
+    -- Terminal
+    --
+
+    use({
+      "akinsho/nvim-toggleterm.lua",
+      config = function()
+        require("nelgau.config.toggleterm").setup()
+      end,
+    })
+
+    --
     -- Navigation and Editing
     --
 
