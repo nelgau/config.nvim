@@ -1,2 +1,2 @@
-require("nelgau.set")
-require("nelgau.packer")
+require("nelgau.settings")
+require("nelgau.plugins")
