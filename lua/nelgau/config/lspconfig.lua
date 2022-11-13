@@ -27,6 +27,8 @@ local on_attach = function(client, bufnr)
 end
 
 function M.setup()
+  local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
   -- Mappings.
   -- See `:help vim.diagnostic.*` for documentation on any of the below functions
   local opts = { noremap=true, silent=true }
@@ -35,9 +37,12 @@ function M.setup()
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
   vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
-  require('lspconfig')['pyright'].setup({
+  config = {
+    capabilities = capabilities,
     on_attach = on_attach,
-  })
+  }
+
+  require('lspconfig')['pyright'].setup(config)
 end
 
 return M
