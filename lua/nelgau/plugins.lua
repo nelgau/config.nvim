@@ -29,6 +29,14 @@ return require('packer').startup({
       end,
     })
 
+    use({
+      "folke/tokyonight.nvim",
+      requires = "folke/lsp-colors.nvim",
+      config = function()
+        require("nelgau.color.tokyonight").setup()
+      end,
+    })
+
     --
     -- Statusline
     --
