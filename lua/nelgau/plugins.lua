@@ -120,5 +120,13 @@ return require('packer').startup({
   config = {
     max_jobs = 50,
     autoremove = true,
+    display = {
+      open_fn = function()
+        return require("packer.util").float({
+          border = "single",
+          width = 80,
+        })
+      end,
+    },
   },
 })
