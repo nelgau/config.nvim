@@ -13,27 +13,43 @@ return require('packer').startup({
     -- Colorschemes
     --
 
-    use({
-      "shaunsingh/nord.nvim",
-      requires = "folke/lsp-colors.nvim",
-      config = function()
-        require("nelgau.color.nord").setup()
-      end,
-    })
+--    use({
+--      "shaunsingh/nord.nvim",
+--      requires = "folke/lsp-colors.nvim",
+--      config = function()
+--        require("nelgau.color.nord").setup()
+--      end,
+--    })
+
+--    use({
+--      "gruvbox-community/gruvbox",
+--      requires = "folke/lsp-colors.nvim",
+--      config = function()
+--        require("nelgau.color.gruvbox").setup()
+--      end,
+--    })
+
+--    use({
+--      "folke/tokyonight.nvim",
+--      requires = "folke/lsp-colors.nvim",
+--      config = function()
+--        require("nelgau.color.tokyonight").setup()
+--      end,
+--    })
+
+--    use({
+--      "projekt0n/github-nvim-theme",
+--      config = function()
+--        require("github-theme").setup({
+--          theme_style = "dark",
+--        })
+--      end,
+--    })
 
     use({
-      "gruvbox-community/gruvbox",
-      requires = "folke/lsp-colors.nvim",
+      "luisiacc/gruvbox-baby",
       config = function()
-        require("nelgau.color.gruvbox").setup()
-      end,
-    })
-
-    use({
-      "folke/tokyonight.nvim",
-      requires = "folke/lsp-colors.nvim",
-      config = function()
-        require("nelgau.color.tokyonight").setup()
+        vim.cmd("colorscheme gruvbox-baby")
       end,
     })
 
@@ -43,6 +59,7 @@ return require('packer').startup({
 
     use({
       "nvim-lualine/lualine.nvim",
+      after = "gruvbox-baby",
       config = function()
         require("nelgau.config.lualine").setup()
       end,

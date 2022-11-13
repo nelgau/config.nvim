@@ -5,7 +5,7 @@ local constants = require("nelgau.constants")
 function M.setup()
   require('lualine').setup({
     options = {
-      theme = constants.colorscheme,
+      theme = "gruvbox-baby", -- constants.colorscheme,
       icons_enabled = false,
     }
   })
