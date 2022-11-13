@@ -94,11 +94,12 @@ return require('packer').startup({
     --
 
     use({
-      -- use "preservim/nerdtree"
-      "santiagovrancovich/nerdtree",
-      branch = "hotfix-issue-#1321",
+      "kyazdani42/nvim-tree.lua",
+      requires = {
+        "kyazdani42/nvim-web-devicons",
+      },
       config = function()
-        require("nelgau.config.nerdtree").setup()
+        require("nelgau.config.nvim-tree").setup()
       end,
     })
 
@@ -117,6 +118,8 @@ return require('packer').startup({
       end,
     })
   end,
+
+  -- Packer startup config
   config = {
     max_jobs = 50,
     autoremove = true,
