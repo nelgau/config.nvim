@@ -10,41 +10,8 @@ return require('packer').startup({
     use("wbthomason/packer.nvim")
 
     --
-    -- Colorschemes
+    -- Colorscheme
     --
-
---    use({
---      "shaunsingh/nord.nvim",
---      requires = "folke/lsp-colors.nvim",
---      config = function()
---        require("nelgau.color.nord").setup()
---      end,
---    })
-
---    use({
---      "gruvbox-community/gruvbox",
---      requires = "folke/lsp-colors.nvim",
---      config = function()
---        require("nelgau.color.gruvbox").setup()
---      end,
---    })
-
---    use({
---      "folke/tokyonight.nvim",
---      requires = "folke/lsp-colors.nvim",
---      config = function()
---        require("nelgau.color.tokyonight").setup()
---      end,
---    })
-
---    use({
---      "projekt0n/github-nvim-theme",
---      config = function()
---        require("github-theme").setup({
---          theme_style = "dark",
---        })
---      end,
---    })
 
     use({
       "luisiacc/gruvbox-baby",
