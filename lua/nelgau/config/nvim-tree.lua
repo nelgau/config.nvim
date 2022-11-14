@@ -14,6 +14,9 @@ function M.setup()
     },
     filters = {
       dotfiles = false,
+      custom = {
+        ".DS_Store",
+      },
     },
     git = {
       ignore = false,
