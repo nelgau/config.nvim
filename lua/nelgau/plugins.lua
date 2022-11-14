@@ -40,6 +40,9 @@ return require("packer").startup({
     use({
       "nvim-lualine/lualine.nvim",
       after = "gruvbox-baby",
+      requires = {
+        "arkav/lualine-lsp-progress",
+      },
       config = function()
         require("nelgau.config.lualine").setup()
       end,
