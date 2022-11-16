@@ -7,6 +7,7 @@ g.loaded_netrwPlugin = 1
 opt.termguicolors = true
 opt.guicursor = ""
 opt.mouse = "a"
+opt.clipboard = "unnamedplus"
 
 opt.number = true
 opt.relativenumber = true
